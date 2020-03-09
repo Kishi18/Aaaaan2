@@ -337,6 +337,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onLogOut(View view) {
         // 현재 로그인한 정보를 지운다.
         LoginSharedPreference.removeAttribute(MainActivity.this, LoginActivity.LOGIN_ID);
+        // check 된 아이디 지워준다
+        LoginSharedPreference.removeAttribute(MainActivity.this, LoginActivity.AUTO_ID);
 
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);
